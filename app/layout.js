@@ -8,10 +8,10 @@ import ThemeToggle from "@/components/ThemeToggle";
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const playfair = Playfair_Display({ variable: "--font-playfair", subsets: ["latin"], style: ["normal", "italic"] });
 
-const __jsonld = {"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Celeste","jobTitle":"Brand Designer & Art Director","url":"https://portfolio-celeste.vercel.app","inLanguage":"en"}};
+const __jsonld = {"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Celeste","jobTitle":"Brand Designer & Art Director","url":"https://celeste.pintuweb.com","inLanguage":"en"}};
 
 export const metadata = {
-  metadataBase: new URL("https://portfolio-celeste.vercel.app"),
+  metadataBase: new URL("https://celeste.pintuweb.com"),
   title: "Celeste — Brand Designer & Art Director",
   description: "Portfolio of Celeste: timeless, editorial brand identity & art direction for premium and lifestyle brands.",
   applicationName: "Celeste",
@@ -19,11 +19,11 @@ export const metadata = {
   authors: [{ name: "Celeste" }],
   creator: "Celeste",
   publisher: "Celeste",
-  alternates: { canonical: "https://portfolio-celeste.vercel.app" },
+  alternates: { canonical: "https://celeste.pintuweb.com" },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://portfolio-celeste.vercel.app",
+    url: "https://celeste.pintuweb.com",
     siteName: "Celeste",
     title: "Celeste — Brand Designer & Art Director",
     description: "Portfolio of Celeste: timeless, editorial brand identity & art direction for premium and lifestyle brands.",
