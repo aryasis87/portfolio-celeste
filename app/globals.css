@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --color-cream: #faf7f1;
+  --color-ink: #2c2620;
+  --color-clay: #b15b3f;
+  --color-sand: #e9e0d2;
+}
+
+/* Dark theme = flip the palette tokens (utilities reference these vars) */
+.dark {
+  color-scheme: dark;
+  --color-cream: #14110d;
+  --color-ink: #ece3d4;
+  --color-clay: #d07a59;
+  --color-sand: #2a241b;
+}
+.dark .grain { mix-blend-mode: soft-light; opacity: 0.09; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+.rule { height: 1px; background: var(--color-ink); opacity: 0.15; }
+
+/* Drop cap (editorial) */
+.dropcap::first-letter {
+  float: left; font-family: var(--font-serif); font-weight: 500; color: var(--color-clay);
+  font-size: 3.6em; line-height: 0.74; padding: 0.05em 0.1em 0 0;
+}
+
+/* Paper grain */
+.grain {
+  position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.04; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-track { background: var(--color-cream); }
+::-webkit-scrollbar-thumb { background: #cbb9a3; border-radius: 9999px; }
+
+:focus-visible { outline: 2px solid var(--color-clay); outline-offset: 3px; }
