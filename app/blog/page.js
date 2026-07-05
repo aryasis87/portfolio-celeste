@@ -13,7 +13,7 @@ export default function BlogPage() {
         <div className="mx-auto max-w-4xl">
           {posts.map((p, i) => (
             <Reveal key={p.title} delay={(i % 3) * 0.06}>
-              <a href="#" className="group flex flex-col justify-between gap-3 border-b border-ink/10 py-8 sm:flex-row sm:items-baseline">
+              <a href="/contact" className="group flex flex-col justify-between gap-3 border-b border-ink/10 py-8 sm:flex-row sm:items-baseline">
                 <div className="max-w-2xl">
                   <div className="mb-2 flex items-center gap-3 text-xs uppercase tracking-[0.15em] text-ink/50">
                     <span className="text-clay">{p.category}</span><span>·</span><span>{p.date}</span><span>·</span><span>{p.read}</span>
