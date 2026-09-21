@@ -1,7 +1,7 @@
 export default function robots() {
   return {
     rules: { userAgent: "*", allow: "/" },
-    sitemap: "https://celeste.pintuweb.com/sitemap.xml",
-    host: "https://celeste.pintuweb.com",
+    sitemap: "https://portfolio-celeste-one.vercel.app/sitemap.xml",
+    host: "https://portfolio-celeste-one.vercel.app",
   };
 }
