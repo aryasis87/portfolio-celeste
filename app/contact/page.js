@@ -34,7 +34,7 @@ export default function ContactPage() {
               <div className="border border-ink/10 p-12 text-center">
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-clay text-cream"><Check size={28} /></div>
                 <h2 className="mt-5 font-serif text-3xl text-ink">Thank you.</h2>
-                <p className="mt-2 text-ink/60">I’ve received your note, {form.name}, and will reply to {form.email} shortly.</p>
+                <p className="mt-2 text-ink/60">This is a portfolio template, {form.name}, so your note wasn’t actually sent. In a live version, it arrives straight in the owner’s inbox.</p>
                 <button onClick={() => { setSent(false); setForm({ name: '', email: '', message: '' }); }} className="mt-6 rounded-full border border-ink px-6 py-2.5 text-sm tracking-wide transition hover:bg-ink hover:text-cream">Send another</button>
               </div>
             ) : (
