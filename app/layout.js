@@ -8,12 +8,12 @@ import ThemeToggle from "@/components/ThemeToggle";
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const playfair = Playfair_Display({ variable: "--font-playfair", subsets: ["latin"], style: ["normal", "italic"] });
 
-const __jsonld = {"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Celeste","jobTitle":"Brand Designer & Art Director","url":"https://portfolio-celeste-one.vercel.app","inLanguage":"en"}};
+const __jsonld = {"@context":"https://schema.org","@type":"WebSite","name":"Celeste — Brand Designer & Art Director","description":"Portfolio template for Celeste, a fictional brand designer and art director: quiet editorial case studies that link to six live demo sites, plus essays on menus, recipe cards, and invitations.","inLanguage":"en"};
 
 export const metadata = {
   metadataBase: new URL("https://portfolio-celeste-one.vercel.app"),
-  title: "Celeste — Brand Designer & Art Director",
-  description: "Portfolio of Celeste: timeless, editorial brand identity & art direction for premium and lifestyle brands.",
+  title: { default: "Celeste — Brand Designer & Art Director", template: "%s — Celeste" },
+  description: "Portfolio template for Celeste, a fictional brand designer and art director: quiet editorial case studies that link to six live demo sites, plus essays on menus, recipe cards, and invitations.",
   applicationName: "Celeste",
   keywords: ["brand designer", "art director", "editorial design", "brand identity", "portfolio"],
   authors: [{ name: "Celeste" }],
@@ -26,13 +26,13 @@ export const metadata = {
     url: "https://portfolio-celeste-one.vercel.app",
     siteName: "Celeste",
     title: "Celeste — Brand Designer & Art Director",
-    description: "Portfolio of Celeste: timeless, editorial brand identity & art direction for premium and lifestyle brands.",
+    description: "Portfolio template for Celeste, a fictional brand designer and art director: quiet editorial case studies that link to six live demo sites, plus essays on menus, recipe cards, and invitations.",
     images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Celeste — Brand Designer & Art Director" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Celeste — Brand Designer & Art Director",
-    description: "Portfolio of Celeste: timeless, editorial brand identity & art direction for premium and lifestyle brands.",
+    description: "Portfolio template for Celeste, a fictional brand designer and art director: quiet editorial case studies that link to six live demo sites, plus essays on menus, recipe cards, and invitations.",
     images: ["/og.jpg"],
   },
   robots: {
@@ -44,8 +44,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${playfair.variable} antialiased`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
+      <body className="antialiased">
         <ThemeProvider>
           <div className="grain" aria-hidden="true" />
           <Navbar />

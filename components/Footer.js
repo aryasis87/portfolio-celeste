@@ -15,23 +15,21 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <h3 className="font-serif text-2xl text-ink">Celeste</h3>
-            <p className="mt-3 max-w-xs text-sm text-ink/60">{profile.role} · {profile.location}.</p>
+            <p className="mt-3 max-w-xs text-sm text-ink/75">{profile.role} · {profile.location}.</p>
             <a href={`mailto:${profile.email}`} className="mt-3 inline-block text-sm text-clay hover:underline">{profile.email}</a>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-ink/40">Navigation</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-ink/70">Navigation</p>
             <ul className="mt-3 space-y-2">
               {nav.map((l) => <li key={l.href}><Link href={l.href} className="text-sm text-ink/70 transition hover:text-clay">{l.label}</Link></li>)}
             </ul>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-ink/40">Elsewhere</p>
-            <ul className="mt-3 space-y-2">
-              {profile.socials.map((s) => <li key={s.label}><a href={s.href} target="_blank" rel="noopener noreferrer" className="text-sm text-ink/70 transition hover:text-clay">{s.label}</a></li>)}
-            </ul>
+            <p className="text-xs uppercase tracking-[0.25em] text-ink/70">About this site</p>
+            <p className="mt-3 text-sm opacity-80">A portfolio template with a fictional persona. Every project links to a live demo site; there are no real clients or testimonials here.</p>
           </div>
         </div>
-        <p className="mt-12 text-center text-sm text-ink/40">© {new Date().getFullYear()} Studio Celeste. All rights reserved.</p>
+        <p className="mt-12 text-center text-sm text-ink/70">© {new Date().getFullYear()} Studio Celeste. All rights reserved.</p>
       </div>
     </footer>
   );

@@ -3,7 +3,7 @@ import PageHeader from '@/components/PageHeader';
 import Reveal from '@/components/ui/Reveal';
 import { posts } from '@/lib/data';
 
-export const metadata = { title: 'Journal — Celeste' };
+export const metadata = { title: 'Journal' };
 
 export default function BlogPage() {
   return (
@@ -13,15 +13,15 @@ export default function BlogPage() {
         <div className="mx-auto max-w-4xl">
           {posts.map((p, i) => (
             <Reveal key={p.title} delay={(i % 3) * 0.06}>
-              <a href="/contact" className="group flex flex-col justify-between gap-3 border-b border-ink/10 py-8 sm:flex-row sm:items-baseline">
+              <a href={`/blog/${p.slug}`} className="group flex flex-col justify-between gap-3 border-b border-ink/10 py-8 sm:flex-row sm:items-baseline">
                 <div className="max-w-2xl">
-                  <div className="mb-2 flex items-center gap-3 text-xs uppercase tracking-[0.15em] text-ink/50">
+                  <div className="mb-2 flex items-center gap-3 text-xs uppercase tracking-[0.15em] text-ink/70">
                     <span className="text-clay">{p.category}</span><span>·</span><span>{p.date}</span><span>·</span><span>{p.read}</span>
                   </div>
                   <h2 className="font-serif text-2xl text-ink transition group-hover:text-clay md:text-3xl">{p.title}</h2>
-                  <p className="mt-2 text-ink/60">{p.excerpt}</p>
+                  <p className="mt-2 text-ink/75">{p.excerpt}</p>
                 </div>
-                <ArrowUpRight className="hidden shrink-0 text-ink/40 transition group-hover:translate-x-1 group-hover:text-clay sm:block" />
+                <ArrowUpRight className="hidden shrink-0 text-ink/70 transition group-hover:translate-x-1 group-hover:text-clay sm:block" />
               </a>
             </Reveal>
           ))}

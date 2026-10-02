@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import Reveal from '@/components/ui/Reveal';
-import { profile, stats, services, projects, clients, process, testimonials } from '@/lib/data';
+import { profile, stats, services, projects, clients, process } from '@/lib/data';
 
 export default function Home() {
   return (
@@ -27,7 +27,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.15}>
               <div className="relative aspect-[3/4] w-full overflow-hidden rounded-sm">
-                <Image src={profile.avatar} alt={profile.name} fill priority sizes="(max-width:768px) 100vw, 40vw" className="object-cover" />
+                <Image src={profile.avatar} alt="" fill priority sizes="(max-width:768px) 100vw, 40vw" className="object-cover" />
               </div>
             </Reveal>
           </div>
@@ -41,7 +41,7 @@ export default function Home() {
             {stats.map((s, i) => (
               <div key={s.label} className={`px-6 py-8 text-center ${i < stats.length - 1 ? 'md:border-r md:border-ink/10' : ''}`}>
                 <p className="font-serif text-4xl text-ink md:text-5xl">{s.value}</p>
-                <p className="mt-2 text-xs uppercase tracking-[0.2em] text-ink/50">{s.label}</p>
+                <p className="mt-2 text-xs uppercase tracking-[0.2em] text-ink/70">{s.label}</p>
               </div>
             ))}
           </div>
@@ -58,7 +58,7 @@ export default function Home() {
                 <div className="h-full bg-cream p-8">
                   <span className="font-serif text-2xl italic text-clay">0{i + 1}</span>
                   <h3 className="mt-4 font-serif text-2xl text-ink">{s.title}</h3>
-                  <p className="mt-3 leading-relaxed text-ink/60">{s.desc}</p>
+                  <p className="mt-3 leading-relaxed text-ink/75">{s.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -76,15 +76,15 @@ export default function Home() {
           <div className="mt-12 grid gap-10 md:grid-cols-2">
             {projects.slice(0, 2).map((p, i) => (
               <Reveal key={p.title} delay={i * 0.1}>
-                <Link href="/work" className="group block">
+                <Link href={`/work/${p.slug}`} className="group block">
                   <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm">
                     <Image src={p.image} alt={p.title} fill sizes="(max-width:768px) 100vw, 50vw" className="object-cover transition duration-700 group-hover:scale-105" />
                   </div>
                   <div className="mt-4 flex items-baseline justify-between">
                     <h3 className="font-serif text-2xl text-ink">{p.title}</h3>
-                    <span className="text-xs uppercase tracking-[0.2em] text-ink/50">{p.category} · {p.year}</span>
+                    <span className="text-xs uppercase tracking-[0.2em] text-ink/70">{p.category} · {p.year}</span>
                   </div>
-                  <p className="mt-1 text-ink/60">{p.desc}</p>
+                  <p className="mt-1 text-ink/75">{p.desc}</p>
                 </Link>
               </Reveal>
             ))}
@@ -95,9 +95,9 @@ export default function Home() {
       {/* Clients */}
       <section className="px-6 py-8">
         <div className="mx-auto max-w-6xl border-y border-ink/10 py-8 text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-clay">Trusted by</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-clay">Selected work for</p>
           <div className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-3">
-            {clients.map((c) => <span key={c} className="font-serif text-xl text-ink/50">{c}</span>)}
+            {clients.map((c) => <span key={c} className="font-serif text-xl text-ink/70">{c}</span>)}
           </div>
         </div>
       </section>
@@ -112,25 +112,8 @@ export default function Home() {
                 <div className="h-full bg-cream p-7">
                   <span className="font-serif text-2xl italic text-clay">{p.step}</span>
                   <h3 className="mt-3 font-serif text-xl text-ink">{p.title}</h3>
-                  <p className="mt-2 text-sm text-ink/60">{p.desc}</p>
+                  <p className="mt-2 text-sm text-ink/75">{p.desc}</p>
                 </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="px-6 py-16">
-        <div className="mx-auto max-w-6xl">
-          <Reveal><h2 className="font-serif text-4xl text-ink md:text-5xl">Kind words.</h2></Reveal>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {testimonials.map((t, i) => (
-              <Reveal key={t.name} delay={i * 0.1}>
-                <figure className="border-t border-ink/10 pt-6">
-                  <blockquote className="font-serif text-xl italic leading-relaxed text-ink">“{t.quote}”</blockquote>
-                  <figcaption className="mt-5"><span className="block text-sm uppercase tracking-[0.15em] text-clay">{t.name}</span><span className="block text-sm text-ink/50">{t.role}</span></figcaption>
-                </figure>
               </Reveal>
             ))}
           </div>

@@ -5,7 +5,7 @@ import PageHeader from '@/components/PageHeader';
 import Reveal from '@/components/ui/Reveal';
 import { profile, skills, experience, education } from '@/lib/data';
 
-export const metadata = { title: 'About — Celeste' };
+export const metadata = { title: 'About' };
 
 export default function AboutPage() {
   return (
@@ -16,7 +16,7 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
           <Reveal>
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm">
-              <Image src={profile.avatar} alt={profile.name} fill sizes="(max-width:768px) 100vw, 50vw" className="object-cover" />
+              <Image src={profile.about} alt="" fill sizes="(max-width:768px) 100vw, 50vw" className="object-cover" />
             </div>
           </Reveal>
           <Reveal delay={0.1}>
@@ -58,8 +58,8 @@ export default function AboutPage() {
                 <div className="grid gap-2 border-t border-ink/10 py-7 md:grid-cols-[200px_1fr]">
                   <span className="text-sm uppercase tracking-[0.15em] text-clay">{e.period}</span>
                   <div>
-                    <h3 className="font-serif text-2xl text-ink">{e.role} <span className="text-ink/40">— {e.company}</span></h3>
-                    <p className="mt-2 max-w-2xl text-ink/60">{e.desc}</p>
+                    <h3 className="font-serif text-2xl text-ink">{e.role} <span className="text-ink/70">— {e.company}</span></h3>
+                    <p className="mt-2 max-w-2xl text-ink/75">{e.desc}</p>
                   </div>
                 </div>
               </Reveal>
@@ -73,7 +73,7 @@ export default function AboutPage() {
                 <div className="border-t border-ink/10 pt-5">
                   <span className="text-sm uppercase tracking-[0.15em] text-clay">{e.period}</span>
                   <h3 className="mt-2 font-serif text-xl text-ink">{e.degree}</h3>
-                  <p className="text-sm text-ink/60">{e.school}</p>
+                  <p className="text-sm text-ink/75">{e.school}</p>
                 </div>
               </Reveal>
             ))}
