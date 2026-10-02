@@ -11,7 +11,7 @@ export default function ThemeToggle() {
   return (
     <button
       type="button"
-      aria-label="Ganti tema"
+      aria-label={mounted && dark ? 'Switch to light mode' : 'Switch to dark mode'}
       onClick={() => setTheme(dark ? 'light' : 'dark')}
       className="fixed bottom-5 right-5 z-[60] grid h-11 w-11 place-items-center rounded-full border border-black/10 bg-white text-gray-700 shadow-lg transition hover:scale-105 dark:border-white/15 dark:bg-white/10 dark:text-amber-300"
     >
